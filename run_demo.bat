@@ -1,0 +1,18 @@
+@echo off
+chcp 65001 >nul
+echo Running Celery Demo...
+echo =====================
+
+echo Checking Redis connection...
+redis-cli ping
+if %errorlevel% neq 0 (
+    echo Redis is not running! Please start Redis server first.
+    echo You can download Redis from: https://github.com/microsoftarchive/redis/releases
+    pause
+    exit /b 1
+)
+
+echo Redis is running, executing demo tasks...
+python producer.py
+
+pause
