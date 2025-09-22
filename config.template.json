@@ -1,0 +1,34 @@
+{
+  "redis": {
+    "type": "aliyun_tair",
+    "host": "your-tair-instance.redis.rds.aliyuncs.com",
+    "port": 6379,
+    "password": "instance-id:your-password",
+    "db": 0,
+    "ssl": false,
+    "connection_pool": {
+      "max_connections": 20,
+      "retry_on_timeout": true,
+      "socket_timeout": 5,
+      "socket_connect_timeout": 5
+    }
+  },
+  "celery": {
+    "broker_url": "redis://:instance-id:your-password@your-tair-instance.redis.rds.aliyuncs.com:6379/0",
+    "result_backend": "redis://:instance-id:your-password@your-tair-instance.redis.rds.aliyuncs.com:6379/0",
+    "task_serializer": "json",
+    "result_serializer": "json",
+    "accept_content": ["json"],
+    "result_expires": 3600,
+    "timezone": "Asia/Shanghai",
+    "enable_utc": true,
+    "worker_prefetch_multiplier": 1,
+    "task_acks_late": true
+  },
+  "flower": {
+    "port": 5555,
+    "basic_auth": null,
+    "url_prefix": "",
+    "enable_events": true
+  }
+}
