@@ -32,7 +32,7 @@ timeout /t 3 /nobreak >nul
 
 echo.
 echo 6. 运行演示任务...
-python flower_demo.py
+python final_demo.py
 
 echo.
 echo ========================================
