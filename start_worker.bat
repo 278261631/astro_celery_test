@@ -20,4 +20,4 @@ if %errorlevel% neq 0 (
 echo Tair is running, starting Celery worker...
 celery -A celery_app worker --loglevel=info --pool=solo --queues=celery,math,long_tasks
 
-pause
+
