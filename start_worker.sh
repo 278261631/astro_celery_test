@@ -14,7 +14,7 @@ if [ $? -ne 0 ]; then
     echo "3. Network connection and firewall settings"
     echo ""
     echo "Please check and update config.json with correct Tair connection info"
-    read -p "Press Enter to continue..."
+
     exit 1
 fi
 
